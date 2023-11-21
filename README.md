@@ -1,5 +1,5 @@
 ![image (4)](https://github.com/Random-Shit-I-Made/Azalea-Temu-Edition/assets/122332042/8b857faf-2555-4553-9226-4173a766d562)
-*Azalea is a very customizable addon for Minecraft Bedrock.*
+*Azalea on temu very real*
 
 > [!NOTE]
 > Azalea is still in development and some features might not work properly
