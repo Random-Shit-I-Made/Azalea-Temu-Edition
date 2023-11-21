@@ -3,7 +3,7 @@ import { ActionFormData, ModalFormData } from '@minecraft/server-ui';
 import { warps } from './warpsapi';
 import { baseConfigMenu } from './configuratorOptions';
 import { Database } from './db';
-import { ActionForm, ModalForm } from './form_func';
+import { ActionForm, MessageForm, ModalForm } from './form_func';
 import { isAdmin } from './isAdmin';
 import { openShopUI } from './shopui';
 import { uiManager } from './uis';
@@ -115,6 +115,16 @@ world.beforeEvents.itemUse.subscribe(e => {
             return;
           }
           if (cfg.type && cfg.type == "hardcoded-playermenu") {
+            let msg2 = new MessageForm();
+            msg2.title("Exclusive to original azalea");
+            msg2.body("Why are you using azalea temu edition?");
+            msg2.button1("§aOk");
+            msg2.button1("§cWhy");
+            msg2.show(player).then(response => {
+              return; // fuck your response
+            });
+
+            return;
             let action2 = new ActionFormData();
             let btns = [];
             for (const player of world.getPlayers()) {

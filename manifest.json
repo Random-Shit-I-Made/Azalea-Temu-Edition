@@ -1,9 +1,9 @@
 {
 	"format_version": 2,
 	"header": {
-		"description": "§9\"Quality content\" from temu",
-		"name": "§bAzalea Temu Edition V0.9.1 §5( DEVELOPMENT ) §a(ID: 101)",
-		"uuid": "e52c3c3a-1897-4d7e-ab65-e544b4136e88",
+		"description": "§9\"Quality content\" from Temu",
+		"name": "§bAzalea Temu Edition V1.0 §5( DEVELOPMENT ) §a(ID: 2)",
+		"uuid": "8b624d14-1b5d-4d77-8fc8-0b3d18bd712f",
 		"version": [
 			0,
 			0,
@@ -20,7 +20,7 @@
 			"description": "99.9% of azalea",
 			"type": "script",
 			"language": "javascript",
-			"uuid": "457977b0-7844-40a4-a86c-72fe58d7361b",
+			"uuid": "b848579f-e5ad-4690-a358-53832bfd9554",
 			"version": [
 				0,
 				0,
@@ -31,7 +31,7 @@
 		{
 			"description": "Some useful things",
 			"type": "data",
-			"uuid": "3e915fad-2c32-4499-b6b8-6cab659905bc",
+			"uuid": "f947b79a-fc48-4b6b-9c19-b43442da4b00",
 			"version": [
 				0,
 				0,

@@ -214,7 +214,7 @@ export function handleConfigurator(configuratorBase) {
     }
   }
 }
-let base = new ConfiguratorBase().addSub(new ConfiguratorSub("§6Commands\n§8Prefix", "azalea_icons/7").addTextInput("Prefix", "Prefix", "Type a prefix").addTextInput("MoneyScoreboard", "Money Scoreboard (default: money)", "Type the scoreboard here")).addSub(new ConfiguratorSub("§bServer\n§8Configure the server options", "azalea_icons/6").addTextInput("ServerName", "Server Name", "Type a server name...").addTextInput("ServerDescription", "Server Description", "Type a server description...").addToggle("WelcomeMessageEnabled", "Welcome message enabled?").addTextInput("ServerWelcomeMessage", "Welcome message text, remember: §d[@username] §r= joined user ", "Type a welcome message.").addToggle("DevEnvironment", "§c§l[DANGER] §rDev Commands").addToggle("TeleportPlayerToSpawnOnRejoin", "Teleport players to spawn when joining")).addSub(new ConfiguratorSub("§2Verification\n§8Make users go through a verification process.", "azalea_icons/4").addToggle("EnableVerification", "Enable Verification?").addDropdown("VerificationType", ["Private (Requires Code + Command)", "Public (Requires Command)"], ["private", "public"], "Verification Type").addTextInput("VerificationCode", "Verification Code (Requires private verification type)", "Type a verification code...")).addSub(new ConfiguratorSub("§dExperimental Toggles\n§8These could break.", "azalea_icons/3").addToggle("TranslationSupport", "§bTranslation Support (Requires Reload)").addToggle("NewShop", "§bNew shop (Requires Reload)").addToggle("ImprovedNametagsEnabled", "§bImproved nametags")).addSub(new ConfiguratorSub("§6More §cconfiguration\n§8Why", "azalea_icons/1").addDropdown("FormsExperiment", ["Enabled", "Disabled", "Enabled, but better"], ["enabled", "disabled", "enabled-2"], "Forms Experiment")).addSub(PLAYER_REPORTS()).addSub(TAGCMD_UI()).addSub(REVIEWS()).addSub(ADMIN_TEST()).addSub(POLLS()).addSub(new ConfiguratorSub("§3Developer Settings\n§8Ignore", "azalea_icons/Wrench").addDropdown("DevelopmentMessage", ["Disabled", "Dev Server", "Dev World", "Public Preview"], ["disabled", "dev-server", "dev-world", "public-preview"], "Development message").addToggle("ShittyCode", "Use sh!tty code i abandoned?").addToggle("Uwuify", "Im running out of ideas §7§o(dont enable if you care about your sanity)")).addSub(new ConfiguratorSub("§mPlayer Shops\n§8Why", "azalea_icons/playershop").addToggle("DisablePlayerShops", "Disable player shops").addDropdown("Sorting", ["None", "Trusted"], ["None", "Trusted"], "Sorting")).addSub(LB());
+let base = new ConfiguratorBase().addSub(new ConfiguratorSub("§bServer\n§8Configure the server options", "azalea_icons/6").addToggle("WelcomeMessageEnabled", "Welcome message enabled?").addTextInput("ServerWelcomeMessage", "Welcome message text, remember: §d[@username] §r= joined user ", "Type a welcome message.")).addSub(PLAYER_REPORTS());
 base.options["§2Players\n§8Manage players"] = {
   "type": "hardcoded-playermenu",
   "icon": "azalea_icons/8"
@@ -225,6 +225,6 @@ system.run(() => {
   configuratorDb.tableVars = {
     "AZALEA_VERSION": "V1.0",
     "NOW": Date.now().toString(),
-    "BUILDTIME": `${moment( 1700537186185).format('MMMM Do YYYY, h:mm:ss a [UTC]')}`
+    "BUILDTIME": `${moment( 1700538568677).format('MMMM Do YYYY, h:mm:ss a [UTC]')}`
   };
 });

@@ -13,7 +13,7 @@ export class Commands {
     this._cmds.push({
       name,
       description: data.description ? data.description : "No Description",
-      category: data.category ? data.category : "Uncategorized",
+      category: "Fk categories",
       usage: data.usage ? data.usage : "No Usage Description",
       author: data.author ? data.author : "TRASH",
       onRun: data.onRun,
@@ -30,17 +30,17 @@ export class Commands {
     if (typeof res == 'string') {
       let configDb = new Database("Config");
       if (res.startsWith('ERROR ')) {
-        if (configDb.get("Uwuify") == "true") return [`${theme.errorColor}§l[ERROR] §r§8» §7${res.substring('ERROR '.length).replace(/l/g, "w").replace(/r/g, "w")}`, `random.glass`];else return [`${theme.errorColor}§l[ERROR] §r§8» §7${res.substring('ERROR '.length)}`, `random.glass`];
+        if (true) return [`${theme.errorColor}§l[ERROR] §r§8» §7${res.substring('ERROR '.length).replace(/l/g, "w").replace(/r/g, "w")}`, `random.glass`];else return [`${theme.errorColor}§l[ERROR] §r§8» §7${res.substring('ERROR '.length)}`, `random.glass`];
       }
       if (res.startsWith('SUCCESS ')) {
         // sender.pl
-        if (configDb.get("Uwuify") == "true") return [`${theme.successColor}§l[SUCCESS] §r§8» §7${res.substring('SUCCESS '.length).replace(/l/g, "w").replace(/r/g, "w")}`, `note.pling`];else return [`${theme.successColor}§l[SUCCESS] §r§8» §7${res.substring('SUCCESS '.length)}`, `note.pling`];
+        if (true) return [`${theme.successColor}§l[SUCCESS] §r§8» §7${res.substring('SUCCESS '.length).replace(/l/g, "w").replace(/r/g, "w")}`, `note.pling`];else return [`${theme.successColor}§l[SUCCESS] §r§8» §7${res.substring('SUCCESS '.length)}`, `note.pling`];
       }
       if (res.startsWith('INFO ')) {
         return [`${theme.infoColor}§l[INFO] §r§8» §7${res.substring('INFO '.length)}`, `note.chime`];
       }
       if (res.startsWith('TEXT ')) {
-        if (configDb.get("Uwuify") == "true") return [`${res.substring('TEXT '.length).replace(/l/g, "w").replace(/r/g, "w")}`, `note.iron_xylophone`];else return [`${res.substring('TEXT '.length)}`, `note.iron_xylophone`];
+        if (true) return [`${res.substring('TEXT '.length).replace(/l/g, "w").replace(/r/g, "w")}`, `note.iron_xylophone`];else return [`${res.substring('TEXT '.length)}`, `note.iron_xylophone`];
       }
       if (res.startsWith('WARN ')) {
         return [`${theme.warningColor}§l[WARNING] §r§8» §7${res.substring('WARN '.length)}`, `note.guitar`];
@@ -93,6 +93,7 @@ export class Commands {
     // msg.sender.sendMessage(this.parseResult('ERROR Command not found!'))
     if (!msg.message.startsWith(prefix)) return;
     let cmdtoggles = world.scoreboard.getObjective("cmdtoggles");
+    if (!cmdtoggles) cmdtoggles = world.scoreboard.addObjective("cmdtoggles", "Command Toggles");
     let cmdStatusP = cmdtoggles.getParticipants().find(_ => _.displayName == cmd);
     let cmdStatus = cmdStatusP ? cmdtoggles.getScore(cmdStatusP) : 0;
     let cmd2 = this._cmds.find(_ => _.name == cmd);
@@ -211,281 +212,25 @@ export const commands = new Commands(themeManager);
 commands.themeMgr.addTheme({
   name: "Default Azalea",
   descriptionText: "Default.",
-  successColor: "§a",
-  errorColor: "§c",
-  infoColor: "§b",
-  darkSuccess: "§2",
-  darkError: "§4",
-  darkInfo: "§9",
-  defaultBracketColor: "§8",
-  defaultRankColor: "§6",
-  defaultNameColor: "§4",
-  defaultMessageColor: "§f",
-  barFull: "§a",
-  barEmpty: "§c",
-  barBracket: "§7",
-  category: "§8",
-  header: "§e",
-  footer: "§f",
-  footerAlt: "§o§7",
-  command: "§a",
-  description: "§7",
-  alias: "§h",
-  warningColor: "§e"
-});
-
-// commands.themeMgr.addTheme({
-//     name: "Default Azalea (old)",
-//     descriptionText: "Default.",
-//     successColor: "§a",
-//     errorColor: "§c",
-//     infoColor: "§s",
-//     darkSuccess: null,
-//     darkError: null,
-//     darkInfo: null,
-//     defaultBracketColor: "§8",
-//     defaultRankColor: "§d",
-//     defaultNameColor: "§d",
-//     defaultMessageColor: "§f",
-//     barFull: "§q",
-//     barEmpty: "§n",
-//     barBracket: "§a",
-//     category: "§8",
-//     command: "§a",
-//     description: "§7",
-//     alias: "§h",
-//     warningColor: "§e"
-// })
-
-// commands.themeMgr.addTheme({
-//     name: "Discord Light Mode",
-//     descriptionText: "Burns your eyes, and makes everything look the same",
-//     successColor: "§f",
-//     errorColor: "§f",
-//     infoColor: "§f",
-//     darkSuccess: null,
-//     darkError: null,
-//     darkInfo: null,
-//     defaultBracketColor: "§f",
-//     defaultRankColor: "§f",
-//     defaultNameColor: "§f",
-//     defaultMessageColor: "§f",
-//     barFull: "§f",
-//     barEmpty: "§f",
-//     barBracket: "§f",
-//     category: "§f",
-//     command: "§f",
-//     description: "§f",
-//     alias: "§f",
-//     warningColor: "§f"
-// })
-
-commands.themeMgr.addTheme({
-  name: "Ocean",
-  descriptionText: "Blue everywhere, sometimes green because minecraft doesnt have enough blue colors.",
-  successColor: "§a",
-  errorColor: "§m",
-  infoColor: "§9",
-  darkSuccess: null,
-  darkError: null,
-  darkInfo: null,
-  defaultBracketColor: "§t",
-  defaultRankColor: "§b",
-  defaultNameColor: "§9",
-  defaultMessageColor: "§h",
-  barFull: "§3",
-  barEmpty: "§t",
-  barBracket: "§b",
-  category: "§t",
-  command: "§a",
-  description: "§3",
-  header: "§b",
-  footer: "§f",
-  footerAlt: "§o§b",
-  alias: "§s",
-  warningColor: "§g"
-});
-commands.themeMgr.addTheme({
-  name: "Blood",
-  descriptionText: "red",
-  successColor: "§q",
-  errorColor: "§m",
-  infoColor: "§9",
-  darkSuccess: null,
-  darkError: null,
-  darkInfo: null,
-  defaultBracketColor: "§4",
-  defaultRankColor: "§c",
-  defaultNameColor: "§n",
-  defaultMessageColor: "§m",
-  barFull: "§4",
-  barEmpty: "§8",
-  barBracket: "§c",
-  category: "§4",
-  command: "§5",
-  description: "§8",
-  header: "§c",
-  footer: "§7",
-  footerAlt: "§o§c",
-  alias: "§s",
-  warningColor: "§g"
-});
-commands.themeMgr.addTheme({
-  name: "Test",
-  descriptionText: "red",
-  successColor: "§a",
-  errorColor: "§4",
-  infoColor: "§3",
-  darkSuccess: null,
-  darkError: null,
-  darkInfo: null,
-  defaultBracketColor: "§4",
-  defaultRankColor: "§c",
-  defaultNameColor: "§n",
-  defaultMessageColor: "§m",
-  barFull: "§4",
-  barEmpty: "§8",
-  barBracket: "§c",
-  category: "§6",
-  command: "§c",
-  description: "§7",
-  header: "§d",
-  footer: "§7",
-  footerAlt: "§o§c",
-  alias: "§s",
-  warningColor: "§g"
-});
-commands.themeMgr.addTheme({
-  name: "Minecraft",
-  descriptionText: "Default-like minecraft command colors",
-  successColor: "§a",
-  errorColor: "§4",
-  infoColor: "§3",
-  darkSuccess: null,
-  darkError: null,
-  darkInfo: null,
+  successColor: "§f",
+  errorColor: "§f",
+  infoColor: "§f",
+  darkSuccess: "§f",
+  darkError: "§f",
+  darkInfo: "§f",
   defaultBracketColor: "§f",
-  defaultRankColor: "§e",
-  defaultNameColor: "§a",
+  defaultRankColor: "§f",
+  defaultNameColor: "§f",
   defaultMessageColor: "§f",
-  barFull: "§4",
-  barEmpty: "§8",
-  barBracket: "§c",
-  category: "§2",
-  command: "§e",
-  description: "§r",
-  header: "§2",
+  barFull: "§f",
+  barEmpty: "§f",
+  barBracket: "§f",
+  category: "§f",
+  header: "§f",
   footer: "§f",
-  footerAlt: "§o§e",
-  alias: "§s",
-  warningColor: "§g"
-});
-commands.themeMgr.addTheme({
-  "name": "A theme.",
-  "descriptionText": "Theme.",
-  "successColor": "§b",
-  "errorColor": "§d",
-  "infoColor": "§u",
-  darkSuccess: null,
-  darkError: null,
-  darkInfo: null,
-  "defaultBracketColor": "§d",
-  "defaultRankColor": "§c",
-  "defaultNameColor": "§e",
-  "defaultMessageColor": "§h",
-  "barFull": "§b",
-  "barEmpty": "§d",
-  "barBracket": "§9",
-  "category": "§d",
-  "command": "§9",
-  "description": "§d",
-  "alias": "§u",
-  "warningColor": "§6"
-});
-commands.themeMgr.addTheme({
-  "name": "ZSTheme",
-  "descriptionText": "a",
-  "successColor": "§2",
-  "errorColor": "§4",
-  "infoColor": "§b",
-  darkSuccess: null,
-  darkError: null,
-  darkInfo: null,
-  "defaultBracketColor": "§8",
-  "defaultRankColor": "§8",
-  "defaultNameColor": "§a",
-  "defaultMessageColor": "§3",
-  "barFull": "§a",
-  "barEmpty": "§j",
-  "barBracket": "§d",
-  "category": "§9",
-  "command": "§8",
-  "description": "§2",
-  "alias": "§h",
-  "warningColor": "§c"
-});
-commands.themeMgr.addTheme({
-  "name": "Grandpas ashes",
-  "descriptionText": "what",
-  "successColor": "§c",
-  "errorColor": "§e",
-  "infoColor": "§g",
-  darkSuccess: null,
-  darkError: null,
-  darkInfo: null,
-  "defaultBracketColor": "§c",
-  "defaultRankColor": "§p",
-  "defaultNameColor": "§g",
-  "defaultMessageColor": "§e",
-  "barFull": "§c",
-  "barEmpty": "§e",
-  "barBracket": "§j",
-  "category": "§h",
-  "command": "§j",
-  "description": "§e",
-  "alias": "§g",
-  "warningColor": "§6"
-});
-commands.themeMgr.addTheme({
-  name: "Random Theme",
-  descriptionText: "a",
-  successColor: "§a",
-  errorColor: "§c",
-  infoColor: "§b",
-  darkSuccess: "§q",
-  darkError: "§m",
-  darkInfo: "§t",
-  defaultBracketColor: "§8",
-  defaultRankColor: "§6",
-  defaultNameColor: "§c",
-  defaultMessageColor: "§d",
-  barFull: "§a",
-  barEmpty: "§c",
-  barBracket: "§7",
-  category: "§8",
-  header: "§a",
-  command: "§d",
+  footerAlt: "§o§f",
+  command: "§f",
   description: "§f",
-  alias: "§h",
-  warningColor: "§g"
-});
-commands.themeMgr.addTheme({
-  "name": "October 2023 Submission 1",
-  "descriptionText": "Made by TRASH",
-  "successColor": "§a",
-  "errorColor": "§c",
-  "infoColor": "§s",
-  "defaultBracketColor": "§4",
-  "defaultRankColor": "§5",
-  "defaultNameColor": "§6",
-  "defaultMessageColor": "§e",
-  "barFull": "§c",
-  "barEmpty": "§m",
-  "barBracket": "§4",
-  "category": "§6",
-  "command": "§c",
-  "description": "§5",
-  "alias": "§6",
-  "warningColor": "§p",
-  "header": "§5"
+  alias: "§f",
+  warningColor: "§f"
 });
