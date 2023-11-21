@@ -1,8 +1,8 @@
 ![image (4)](https://github.com/Random-Shit-I-Made/Azalea-Temu-Edition/assets/122332042/8b857faf-2555-4553-9226-4173a766d562)
 *Azalea on temu very real*
 
-> [!NOTE]
-> Azalea is still in development and some features might not work properly
+> [!WARNING]
+> You **will** lose brain cells using this addon
 
 ## ⭐ Current features:
 - Admin UI
