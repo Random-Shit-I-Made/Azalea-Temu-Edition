@@ -1,8 +1,8 @@
 {
 	"format_version": 2,
 	"header": {
-		"description": "§9Finally, a new release! Make sure to do §a/tag @s add admin",
-		"name": "$AZALEAVER §a(ID: $BUILDID)",
+		"description": "§9\"Quality content\" from Temu",
+		"name": "§bAzalea Temu Edition $AZALEAVER §a(ID: $BUILDID)",
 		"uuid": "$UUID",
 		"version": [
 			0,
