@@ -1,4 +1,4 @@
-![Azalea Banner Rounded](https://github.com/Ant767/Azalea/assets/122332042/35520c60-4b06-4bb6-bca4-979ccd3b0ebd)
+![image (4)](https://github.com/Random-Shit-I-Made/Azalea-Temu-Edition/assets/122332042/8b857faf-2555-4553-9226-4173a766d562)
 *Azalea is a very customizable addon for Minecraft Bedrock.*
 
 > [!NOTE]
